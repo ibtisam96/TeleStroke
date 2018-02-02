@@ -7,7 +7,7 @@ session_start();
 <head>
 <title>Login</title>
 
- <link rel="stylesheet" type="text/css" href="../Sakura.css">
+ <link rel="stylesheet" type="text/css" href="Telestroke.css">
   </head>
 
 <body>
@@ -25,7 +25,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "Telestroke";
-$userlog=(string)$_POST['username'];
+$staffid=(string)$_POST['staffid'];
 $userpass=(string)$_POST['password'];
 
 
@@ -35,16 +35,16 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 	
-$SQLstring="SELECT * From Administration where staff_id='$userlog'";
+$SQLstring="SELECT * From Administration where staff_id='$staffid'";
 $QueryResult=mysqli_query($conn,$SQLstring)
 Or die ("<p>Unable to access the menu</p>");
 
 $output=mysqli_fetch_row($QueryResult);
 
-	 if($output['2']==$userlog && $output['1']==$userpass){
-	 	echo "<br><br><br><div style=' display: table; margin-right: auto; margin-left: auto; background-color:#eaeaea; radius:20px;'><p style='text-align:center;'> Welcome ".$output['0']." !!!<br>You will be redirected soon to the home page or <a link href='admindash.html'>click here<a></p></div>";
-$_SESSION["cphone"] = $userlog;
-header("Refresh: 5; URL=admindash.html"); 
+	 if($output['2']==$staffid && $output['1']==$userpass){
+	 	echo "<div id='logincontainer' style='text-align:center'>Welcome ".$output['0']." !!!<br>You will be redirected soon to the home page or <a link href='Admin/admindash.html'>click here<a></p></div>";
+$_SESSION["staffid"] = $staffid;
+header("Refresh: 2; URL=Admin/admindash.html"); 
 
 	 }else{
 		 echo"<br><br><br><div style=' display: table; margin-right: auto; margin-left: auto; background-color:#eaeaea; radius:20px;'><p style='text-align:center;'> The User Name or Password you enetered are wrong<br><a link href='login.html'>Please try again<a></p></div>";

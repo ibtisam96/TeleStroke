@@ -7,9 +7,13 @@ $dbname = "Telestroke";
 $idform=$_POST['paitentid'];
 $nameform=$_POST['name'];
 $phoneno=$_POST['phoneno'];
-$Admission=$_POST['Admission'];
+$phoneno1=$_POST['phoneno1'];
+$email=$_POST['email'];
 $genderform=$_POST['gender'];
 $BDpaitent=$_POST['paitentBD'];
+$city=$_POST['city'];
+$address1=$_POST['add1'];
+$address2=$_POST['add2'];
 $hospitalid=$_POST['hospital_id'];
 
 
@@ -23,7 +27,7 @@ $checkstring="SELECT patient_id FROM patient WHERE patient_id = '$idform'";
 $checkResult=mysqli_query($conn,$checkstring)
 Or die ("<p>Unable to access your information <br> Please try again later or contact the admin</p>");
 if(mysqli_num_rows($checkResult) == 0){
-$sql = "INSERT INTO patient VALUES ('$idform','$nameform', '$phoneno', '$Admission', '$genderform','$BDpaitent', '$hospitalid')";
+$sql = "INSERT INTO patient VALUES ('$idform','$nameform', '$phoneno','$phoneno1', '$email', '$genderform','$BDpaitent','$city' ,'$address1' ,'$address2','$hospitalid')";
 
 
 if(mysqli_query($conn, $sql)) { echo "<br><br><br><div style=' display: table; margin-right: auto; margin-left: auto;

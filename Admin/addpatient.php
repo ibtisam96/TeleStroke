@@ -54,10 +54,13 @@
 	<td><label>Phone number: </label></td>
 	<td><input type="text" name="phoneno"  style="width: 100%"></td>
 </tr>
-
 <tr>
-	<td><label>Admission date: </label></td>
-	<td><input type="date" name="Admission"  style="width: 100%"></td>
+	<td><label>Phone number: </label></td>
+	<td><input type="text" name="phoneno1"  style="width: 100%"></td>
+</tr>
+<tr>
+	<td><label>E-mail: </label></td>
+	<td><input type="email" name="email"  style="width: 100%"></td>
 </tr>
 
 <tr>
@@ -71,6 +74,19 @@
 	<td><label>patient birth date : </label></td>
 	<td><input type="date" name="paitentBD"  style="width: 100%"></td>
 </tr>
+<tr>
+	<td><label>Patient City : </label></td>
+	<td><input type="text" name="city"  style="width: 100%"></td>
+</tr>
+<tr>
+	<td><label>patient address line 1 : </label></td>
+	<td><input type="text" name="add1"  style="width: 100%"></td>
+</tr>
+<tr>
+	<td><label>patient address line 2 : </label></td>
+	<td><input type="text" name="add2"  style="width: 100%"></td>
+</tr>
+
 
 <tr>
 	<td><label>Hospital ID : </label></td>
@@ -110,7 +126,6 @@
 
 
 
-<footer ID="thefooter">
 <br>
 <br>
 </footer>

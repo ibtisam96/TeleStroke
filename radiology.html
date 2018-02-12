@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+
+        <link rel="stylesheet" type="text/css" href="papaya.css?build=1432" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="papaya.js?build=1432"></script>
+    
+        <title>Papaya Viewer</title>
+    
+<script type="text/javascript">
+        var params = [];
+        params["worldSpace"] = true;
+        params["images"] = ["../Radiology/myBaseImage.nii"];
+        params["surfaces"] = ["../Radiology/mySurface.surf.gii"];
+        params["myOverlayImage.nii.gz"] = {"min": 4, "max": 10};
+ 
+</script>
+</head>
+
+
+<body style="margin:0">  
+
+<header>
+<div id="logocontainer">
+	<img id="logo" src="Logo.png">
+	<img id="helpbutton" src="help.png" align="right">
+</div>
+</header> 
+
+<br>
+
+<section style="height:58%; width:58%; margin-left:22%; margin-right:22%;">
+    <div class="papaya" data-params="params"></div>
+</section> 
+    
+        
+    </body>
+</html>

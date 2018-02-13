@@ -35,13 +35,13 @@
 <div id="logincontainer" align="center">
 <center><h3> Request Session </h3></center>
 <table border ="0" align="center">
-	<tr><td><form action="UserLogin.php" method="post"><label>Enter Patient ID:</label></td>
-		<td><input type="text" name="Patient ID" style="width: 100%"></td>
+	<tr><td><form action="initiatesession.php" method="post">
+		<label>Enter Patient ID:</label></td>
+		<td><input type="text" name="patientid" style="width: 100%"></td>
 	</tr>
 	<tr><td><label>Select Hospital: </label></td>
 		<td>
-<select style="width: 100%">
-  <option 
+<select name="hospitalid" style="width: 100%">
   <?php
 $host="localhost";
 $user="root";
@@ -50,28 +50,23 @@ $db="Telestroke";
 $con=mysqli_connect($host,$user,$pass,$db) or die("unable to connect");
  
   
-	   $query = "SELECT name FROM hospital";
+	   $query = "SELECT hospital_id, name FROM hospital WHERE type LIKE'hub'";
 	  
 	   $result = mysqli_query($con, $query);
-	   //display Hosbital ID  from db ..
 	 
 	   
-	   echo "<select name ='name'>";
 		  while ($row = mysqli_fetch_array($result)) 
 		  {
-		  
-			
-  echo "<option value ='" . $row['name'] . " '>" .$row['name'] ." </option> ";
+
+  echo "<option value ='{$row[0]}'> {$row[1]} </option> ";
 		  }
-  echo "</select> ";
 ?>
-</option>
 </select>  
 		</td></tr>
 		
 	<tr><td colspan="2" align="center">
 	<br><input type="submit" value="Request Session" id="resetbutton">
-	<input type="reset" value="Cancel" id="resetbutton">
+	<input type="button" onclick="window.location.href='help.html'" value="Cancel" id="resetbutton">
 	</td></tr>
 	
 	

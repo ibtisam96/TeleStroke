@@ -8,7 +8,6 @@
 {
     text-align:right; 
     vertical-align:middle;
-
 }
  </style>
   </head>
@@ -22,10 +21,14 @@
 		
 	</div>
 	 <ul class="navigate" id="navigation">
-	        <li><a href="SpokeHome.html">Dashboard</a></li>
-	        <li><a href="Request_session.php ">Request Sessions</a></li>
-	        <li><a href="hospitalstaff.php">Patient Record </a></li>
-			<li><a href="video.html">Video</a></li>
+	       <ul class="navigate" id="navigation">
+	        <li><a href="SpokeHome.html">Home</a></li>
+			<li><a href="requestsession.php">Request Session </a></li>
+	        <li><a href="pmr.php ">Patient Medical Record</a></li>
+	        <li><a href="Patients.php">Patients</a></li>
+			<li><a href="help.php">Help</a></li>			
+	  </ul>
+			
 	  </ul>
 </head>
 
@@ -57,7 +60,6 @@ $con=mysqli_connect($host,$user,$pass,$db) or die("unable to connect");
 	   
 		  while ($row = mysqli_fetch_array($result)) 
 		  {
-
   echo "<option value ='{$row[0]}'> {$row[1]} </option> ";
 		  }
 ?>

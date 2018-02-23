@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+<title>Help</title>
+
+ <link rel="stylesheet" type="text/css" href="../Telestroke.css">
+ <style type="text/css"> tr.m:nth-child(even) {background: #c9c3c5}</style>
+
+         
+  </head>
+
+<body>
+
+<header>
+<div id="logocontainer">
+<img id="logo" src="../images/Logo.png" width=100px height=100px>
+<img id="helpbutton" src="../images/help.png" align="right">
+</div>
+ 
+</header> 
+
+
+<div id="mainwindow">
+ <br><br>
+<h1>Help </h1> 
+<br>
+<form action="helpreport.php" method="post"enctype="multipart/form-data" align="left">
+
+Staff ID <br>
+<input type="ID" name="ID"required><br>
+ Subject  <br>
+<input type="text" name="Subject"required><br>
+Problem Description<br>
+ <textarea rows="6" cols="50" name="Description"required>
+</textarea>
+<br>
+
+Attachment(Screen Capture)<br>
+
+<input type="file" name="image" id="image" /> <br> <br>
+<input type="submit" name="Submit"  value="Submit" class="btn btn-info"align="center" />  
+<?php
+ $connect = mysqli_connect("localhost", "root", "", "Telestroke");  
+ ?><br /><br /> <br>
+               
+                
+           </div>  
+		   
+</form>
+</body>
+</html>
+
+  

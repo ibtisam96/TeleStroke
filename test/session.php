@@ -81,6 +81,10 @@
         <script>
             var domain = "meet.jit.si";
             var options = {
+                //in the line after I chose a static room name to tes if it's working and we can make up our own room names (It is! ^.^)
+                //However, we need to make automatically generated. I have to ideas for this: 
+                        //1-Write a code that combines the patien ID and the hub ID so it will become our room name
+                        //2-Assign each Hub a specific room name then based on the data recieved from the reques session we connect them to that hospiatl
                 roomName: "Hospital",
                 width: 700,
                 height: 700,

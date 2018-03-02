@@ -1,7 +1,7 @@
 <!Doctype html>
 <html>
 <head>
-<title>Add Patient</title>
+<title>Tlestroke System| Add Patient</title>
 
  <link rel="stylesheet" type="text/css" href="../Telestroke.css">
  <style type="text/css">

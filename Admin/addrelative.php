@@ -1,7 +1,7 @@
 <!Doctype html>
 <html>
 <head>
-<title>Add Patient's companion information </title>
+<title>Telestroke System | Add Relative</title>
 
  <link rel="stylesheet" type="text/css" href="../Telestroke.css">
  <style type="text/css">
@@ -36,7 +36,7 @@
 <br><br>
 <table align='center'>
 <tr>
-<h1>Add Patient's companion information</h1>
+<h2>Add Patient's companion information</h2>
 <form action="newrelative.php" method="post">
 </tr>
 <tr><td>	
@@ -49,6 +49,10 @@
 <tr>
 	<td><label>Relative Name: </label></td>
 	<td><input type="text" name="name" style="width: 100%"></td>
+</tr>
+<tr>
+	<td><label>Relative Last Name: </label></td>
+	<td><input type="text" name="name1" style="width: 100%"></td>
 </tr>
 <tr>
 	<td><label>Phone number: </label></td>

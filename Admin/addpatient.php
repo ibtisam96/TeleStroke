@@ -47,8 +47,12 @@
 </td>
 </tr>
 <tr>
-	<td><label>Name: </label></td>
-	<td><input type="text" name="name" style="width: 100%"></td>
+	<td><label>Frist Name: </label></td>
+	<td><input type="text" name="name1" style="width: 100%"></td>
+</tr>
+<tr>
+	<td><label>Last Name: </label></td>
+	<td><input type="text" name="name2" style="width: 100%"></td>
 </tr>
 <tr>
 	<td><label>Phone number: </label></td>

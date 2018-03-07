@@ -1,0 +1,109 @@
+<!Doctype html>
+<html>
+<head>
+<title>Telestroke System | Sessions</title>
+
+ <link rel="stylesheet" type="text/css" href="../Telestroke.css">
+ <style type="text/css"> tr.m:nth-child(even) {background: #c9c3c5}</style>
+
+  </head>
+
+<body>
+
+<header>
+<div id="logocontainer">
+<img id="logo" src="../images/Logo.png" width=100px height=100px>
+<img id="helpbutton" src="../images/help.png" align="right">
+</div>
+ <ul class="navigate" id="navigation">
+        <li><a href="admindash.html">Dashboard</a></li>
+        <li><a href="Session.php">Sessions</a></li>
+        <li><a href="hospitalstaff.php">Hospital Staff</a></li>
+		<li><a href="control.html">System Control</a></li>
+  </ul>
+</header> 
+<br>
+<div id="mainwindow">
+  <table width='70%' align='center'>
+<tr><td><h3 align="left"><center>Patient Session's Record</center></h3></td></tr>
+</td></tr>
+</table>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "Telestroke";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+echo "<table class='alternate' width='70%' align='center'>";
+
+echo "<tr>
+<th>Session Date</th>
+<th>Patient ID</th>
+<th>General ID</th>
+<th>Specialist ID </th>
+<th>Note </th>
+</tr>";
+
+$query= "SELECT session_date FROM session ";
+$result=mysqli_query($conn,$query)
+Or die ("<p>Unable to access your information <br> Please try again later or contact the admin</p>");
+
+$pquery= "SELECT * FROM patient INNER JOIN session ON patient.patient_id = session.patient_id";
+$presult=mysqli_query($conn,$pquery)
+Or die ("<p>Unable to access your information <br> Please try again later or contact the admin</p>");
+
+$Gquery= "SELECT * from staff INNER JOIN  session ON staff.staff_id =session.spoke_id ";
+$Gresult=mysqli_query($conn,$Gquery)
+Or die ("<p>Unable to access your information1 <br> Please try again later or contact the admin</p>");
+
+$Squery = "SELECT * from staff INNER JOIN  session ON staff.staff_id =session.hub_id ";
+$Sresult=mysqli_query($conn,$Squery)
+Or die ("<p>Unable to access your information2 <br> Please try again later or contact the admin</p>");
+
+$Nquery= "SELECT * FROM session ";
+$Nresult=mysqli_query($conn,$Nquery)
+Or die ("<p>Unable to access your information3 <br> Please try again later or contact the admin</p>");
+
+
+
+$Row=mysqli_fetch_row($result);
+$pRow=mysqli_fetch_row($presult);
+$GRow=mysqli_fetch_row($Gresult);
+$SRow=mysqli_fetch_row($Sresult);
+$NRow=mysqli_fetch_row($Nresult);
+
+
+do {
+	echo "<tr class='m'><td>{$Row[0]}</td>";
+	echo "<td>{$pRow[0]}</td>";
+    echo "<td>{$GRow[0]}</td>";
+	echo "<td>{$SRow[0]}</td>";
+	echo "<td>{$NRow[3]}</td>";
+	
+ 	echo "<td> <form action='Sessions.php' method='post'>
+	<input type='hidden' name='session_id' value='{$Row[0]}'>
+	<input type='hidden' name='' value='{$GRow[0]}'>
+	<input type='hidden' name='' value='{$SRow[0]}'>
+	<input type='hidden' name='' value='{$NRow[3]}'>
+ 	</form> </td>";
+ 	
+$Row=mysqli_fetch_row($result);
+$pRow=mysqli_fetch_row($presult);
+$GRow=mysqli_fetch_row($Gresult);
+$SRow=mysqli_fetch_row($Sresult);
+$NRow=mysqli_fetch_row($Nresult);
+
+} while($NRow);
+ 
+
+
+?>
+
+<br><br>
+</div>
+<footer ID="thefooter">
+
+  </footer>
+</body>
+</html>

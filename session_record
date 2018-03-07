@@ -53,11 +53,13 @@ $pquery= "SELECT * FROM patient INNER JOIN session ON patient.patient_id = sessi
 $presult=mysqli_query($conn,$pquery)
 Or die ("<p>Unable to access your information <br> Please try again later or contact the admin</p>");
 
-$Gquery= "SELECT * from staff INNER JOIN  session ON staff.staff_id =session.spoke_id ";
+$Gquery= "SELECT * from staff INNER JOIN  session ON staff.staff_id =session.spoke_id 
+JOIN hospital ON  staff.hospital_id = hospital.hospital_id where type= 'spoke'";
 $Gresult=mysqli_query($conn,$Gquery)
 Or die ("<p>Unable to access your information1 <br> Please try again later or contact the admin</p>");
 
-$Squery = "SELECT * from staff INNER JOIN  session ON staff.staff_id =session.hub_id ";
+$Squery = "SELECT * from staff INNER JOIN  session ON staff.staff_id =session.hub_id  
+JOIN hospital ON  staff.hospital_id = hospital.hospital_id where type= 'hub'";
 $Sresult=mysqli_query($conn,$Squery)
 Or die ("<p>Unable to access your information2 <br> Please try again later or contact the admin</p>");
 
